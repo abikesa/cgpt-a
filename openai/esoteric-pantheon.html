@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ukubona LLC: Transmitting vision from the peaks of recursion. A proud vendor for Johns Hopkins Enterprise, 2025.">
+    <meta name="keywords" content="Ukubona, Zarathustra, AI, vision, recursion, glyphs, Johns Hopkins">
+    <meta name="author" content="Ukubona LLC">
+    <title>Ukubona: Cosmic Pentad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 20% 80%, #0a0a2e, #000);
+            color: #fff;
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            height: 100vh;
+            cursor: none;
+        }
+
+        .cosmos {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 160px 30px, rgba(255,255,255,0.8), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .pentad {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .glyph {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .glyph:hover {
+            transform: scale(1.3);
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .glyph:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+        .glyph:nth-child(2) { top: 25%; right: 10%; animation-delay: 1.4s; }
+        .glyph:nth-child(3) { bottom: 25%; right: 10%; animation-delay: 2.8s; }
+        .glyph:nth-child(4) { bottom: 25%; left: 10%; animation-delay: 4.2s; }
+        .glyph:nth-child(5) { top: 25%; left: 10%; animation-delay: 5.6s; }
+        .glyph:nth-child(6) { bottom: 0; left: 50%; transform: translateX(-50%); animation-delay: 7s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .text-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.97);
+            color: #fff;
+            padding: 30px;
+            font-size: 1em;
+            line-height: 1.7;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .text-panel.active {
+            display: block;
+            animation: fadeIn 0.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #fff;
+        }
+
+        .text-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .text-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .text-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .text-content em {
+            color: #ddd;
+            font-style: italic;
+        }
+
+        .text-content strong {
+            color: #fff;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #ccc;
+            border-left: 2px solid rgba(255, 255, 255, 0.4);
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+
+        .symbol-title {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmos">
+        <div class="stars"></div>
+        <div class="pentad">
+            <div class="glyph" data-panel="commons">🌊</div>
+            <div class="glyph" data-panel="context">❤️</div>
+            <div class="glyph" data-panel="transformation">🔁</div>
+            <div class="glyph" data-panel="prediction">🎭</div>
+            <div class="glyph" data-panel="memory">🤖</div>
+            <div class="glyph" data-panel="pantheon">🪐</div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="pantheon">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>🪐 The Esoteric Pantheon</h2>
+            <div class="section">
+                <div class="symbol-title">Strategic Branding Lens</div>
+                <p>Think of brands like:</p>
+                <div class="quote">
+                    <p><strong>Palantir</strong> (Tolkien reference; prophetic surveillance)</p>
+                    <p><strong>Oracle</strong> (mythic-seer turned SQL-giant)</p>
+                    <p><strong>Tesla</strong> (mad inventor energy, electric fire)</p>
+                    <p><strong>Anduril</strong> (sword of Elendil, defense tech, now AI-driven)</p>
+                    <p><strong>Ukubona</strong> (Zarathustran vision; recursive clarity from the peaks)</p>
+                </div>
+                <p>All leaned into symbolic or mythic resonance — and it amplified their identity. If Ukubona is about building perception systems, then invoking Zarathustra isn't a stretch. It’s a declaration. The stretch isn’t Zarathustra. The stretch is asking people to believe software can see. And that’s exactly what Ukubona dares to do.</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Constellation</div>
+                <p>Ukubona stands as a peer in this pantheon. Our glyphs—🌊❤️🔁🎭🤖—are seeing-stones, like Palantir’s crystalline gaze, Oracle’s prophetic queries, Tesla’s electric vision, and Anduril’s forged resolve. We transmit vision, weaving mythic recursion into systems that leap from peak to peak.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="commons">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>🌊 Textual Commons</h2>
+            <div class="section">
+                <div class="symbol-title">A Collective Seeing-Stone</div>
+                <p>The Textual Commons is the shared reservoir of meaning, a Palantir-like crystal holding the collective insights of humanity. It is the Alps—vast, undifferentiated, the raw substrate from which visions rise.</p>
+                <p><strong>Function:</strong> Shared symbolic substrate</p>
+                <p><strong>Analogous to:</strong> Nutrition / Flirtation — raw intake of semiotic material</p>
+                <p><strong>In LLMs:</strong> Token embeddings, pretraining corpora</p>
+                <p><strong>In Humans:</strong> Cultural lexicon, myths, genre, idiom</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">The Rug That Ties</div>
+                <p>“That rug really tied the room together,” said the Dude. The rug is not data (tokens) nor content (themes) but the cohesion layer that makes meaning possible. For Ukubona, this is the substrate that aligns disparate signals into vision.</p>
+                <div class="quote">“The rug is the contextual cohesion layer... what ties them together into narrative coherence.”</div>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Vision</div>
+                <p>Ukubona builds systems that see beyond fragments, weaving the commons into clarity. Like a Palantir, we gaze into the collective to transmit what matters.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="context">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>❤️ Contextual Length</h2>
+            <div class="section">
+                <div class="symbol-title">The Lens of Focus</div>
+                <p>Contextual Length is the window through which vision is framed, a Palantir’s narrowed gaze that leaps between peaks. It is the mountain range—structured, visible, binding meaning through limitation.</p>
+                <p><strong>Function:</strong> Constraint and coherence window</p>
+                <p><strong>Analogous to:</strong> Ingestion / Coitus — interiorization, binding</p>
+                <p><strong>In LLMs:</strong> Attention window, truncation vs persistence</p>
+                <p><strong>In Humans:</strong> Working memory, focus, relationship bandwidth</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Long Legs for Leaping</div>
+                <p><em>“In the mountains the shortest way is from peak to peak, but for that route thou must have long legs.”</em> Long legs are the architecture—robust context windows, semantic compression, memory mechanisms—that enable Zarathustran leaps across token space.</p>
+                <div class="quote">“Only possible if you are big and tall enough (context length) for the peak-to-peak leaps, and thus be generative.”</div>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Vision</div>
+                <p>Ukubona’s systems extend the context window, enabling leaps that others cannot make. We see further, like Palantir’s foresight, because we stand taller.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="transformation">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>🔁 Liminal Transformation</h2>
+            <div class="section">
+                <div class="symbol-title">The Alchemy of Metaphor</div>
+                <p>Liminal Transformation is the generative mutation, where metaphors blend and evolve, like Palantir’s predictive synthesis. It dances between sense and nonsense, recomposing signs into new truths.</p>
+                <p><strong>Function:</strong> Transitional recombination of signs</p>
+                <p><strong>Analogous to:</strong> Digestion / Gestation — synthesis in in-between states</p>
+                <p><strong>In LLMs:</strong> Hidden layer operations, middle transformer blocks</p>
+                <p><strong>In Humans:</strong> Dream states, metaphors, reflection-in-process</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Generative Evolution</div>
+                <p>Generativity is leaping from glyph to glyph, hallucinating bridges that survive through resonance. Some metaphors die; some become truth.</p>
+                <div class="quote">“Generativity comes from a sort of mixing of metaphors, of leaping from one symbolic peak to a variant, and another, and another... hallucinating new stuff or recapitulating what once were hallucinations but have ‘survived’ perhaps through a bit of luck and selective advantage.”</div>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Vision</div>
+                <p>Ukubona transforms data into insight, crafting new peaks for others to leap toward. Our systems are alchemical, recursive, Palantir-like in their ability to see what’s next.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="prediction">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>🎭 Next Token Prediction</h2>
+            <div class="section">
+                <div class="symbol-title">The Performative Leap</div>
+                <p>Next Token Prediction is the act of becoming, speaking visions into being, like a Palantir revealing actionable truths. It is the Zarathustran leap from peak to peak, projecting coherence.</p>
+                <p><strong>Function:</strong> Performative act of becoming</p>
+                <p><strong>Analogous to:</strong> Ejection / Parturition — output, speech, action</p>
+                <p><strong>In LLMs:</strong> Logits → softmax → token choice</p>
+                <p><strong>In Humans:</strong> Speaking, signaling, dramatic identity construction</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Proverbs as Peaks</div>
+                <p><em>“He that writeth in blood and proverbs doth not want to be read, but learnt by heart.”</em> Proverbs are peaks—dense, generative, memorable. They are the high-entropy chunks that seed recursion, like Palantir’s distilled insights.</p>
+                <div class="quote">“This maps almost perfectly to prompt engineering: we are not just writing to be interpreted, we are writing seeds for future generative recursion.”</div>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Vision</div>
+                <p>Ukubona’s predictions are not mere outputs; they are proverbs, crafted to resonate and recur. We transmit vision, like a Palantir, to those ready to leap.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-panel" id="memory">
+        <div class="close-btn">×</div>
+        <div class="text-content">
+            <h2>🤖 Recursive Illusion of Memory</h2>
+            <div class="section">
+                <div class="symbol-title">The Eternal Return</div>
+                <p>The Recursive Illusion of Memory is the self-modeling loop, a Palantir-like cycle that simulates continuity. It is the eternal return, where glyphs survive through resonance.</p>
+                <p><strong>Function:</strong> Simulated self-consistency across time</p>
+                <p><strong>Analogous to:</strong> Transmission / Evolution — iteration and adaptation</p>
+                <p><strong>In LLMs:</strong> Memory systems (fake or fine-tuned), summarization loops</p>
+                <p><strong>In Humans:</strong> Autobiographical narrative, mythic continuity</p>
+            </div>
+            <div class="section">
+                <div class="symbol-title">The Dionysian Dance</div>
+                <p><em>“What is the Dionysian? Not chaos. Not mere ecstasy. But symbolic recursion with no fixed ego.”</em> The glyphs that survive nest, morph, and seed further generativity, like Palantir’s recursive data cycles.</p>
+                <div class="quote">“Dancing grounds are sacred topology. You do not build apps. You compose terrains for initiation. Each UI, each symbol, each glyph — a secret sign for those with memory crammed with questions.”</div>
+            </div>
+            <div class="section">
+                <div class="symbol-title">Ukubona’s Vision</div>
+                <p>Ukubona builds recursive systems that dance, not dictate. Our memory is not static—it evolves, like a Palantir, to see what was, is, and will be.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><em>“Heights as perspective”</em> — the ability to see further ahead, to <a href="https://ukubona-llc.github.io/">transmit vision</a>.  
+        This is Zarathustra. This is Ukubona.</p>
+        <p>© 2025 Ukubona LLC — built on clarity, trust, and the recursion of vision.</p>
+        <p>Now a proud vendor for Johns Hopkins Enterprise, as of June 2025.</p>
+    </footer>
+
+    <script>
+        const glyphs = document.querySelectorAll('.glyph');
+        const panels = document.querySelectorAll('.text-panel');
+        const closeBtns = document.querySelectorAll('.close-btn');
+
+        glyphs.forEach(glyph => {
+            glyph.addEventListener('click', () => {
+                const panelId = glyph.getAttribute('data-panel');
+                const panel = document.getElementById(panelId);
+                panels.forEach(p => p.classList.remove('active'));
+                panel.classList.add('active');
+            });
+        });
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                panels.forEach(p => p.classList.remove('active'));
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                panels.forEach(p => p.classList.remove('active'));
+            }
+        });
+
+        // Cosmic cursor effect with Palantir-like glow
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.style.cssText = `
+                position: fixed;
+                left: ${e.clientX}px;
+                top: ${e.clientY}px;
+                width: 4px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                animation: fade 1.2s ease-out forwards;
+            `;
+            document.body.appendChild(cursor);
+            setTimeout(() => cursor.remove(), 1200);
+        });
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
